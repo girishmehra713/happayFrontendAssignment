@@ -1,0 +1,51 @@
+@import "../../Styles/_variables.scss";
+
+.navbar{
+  padding: 24px 48px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 8px 0px 10px rgba(0, 0, 0, 0.308);
+  z-index: 1050;
+  a{
+    text-decoration: none;
+  }
+  .logo {
+    width: 48px;
+    height: 48px;
+  }
+  .navHeading{
+    font-size: 24px;
+    font-family: sans-serif;
+    margin-left: 12px;
+    color: $primary;
+    
+  }
+  .cartIcon{
+    font-size: 24px;
+    color: rgb(19, 19, 19);
+    position: relative;
+    .badge{
+      width: 18px;
+      height: 18px;
+      position: absolute;
+      top: -6px;
+      left: 70%;
+      font-size: 11px;
+      background-color: $danger;
+      border-radius: 50%;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  .profileLogo {
+    width: 36px;
+    height: 36px;
+    margin-left: 18px;
+  }
+
+
+}

@@ -1,0 +1,48 @@
+.card{
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0px;
+}
+.cardImg{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  
+}
+.cardPriceDetails{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 10px;
+}
+.cardName{
+  font-size: 16px;
+  color: rgb(34, 33, 33);
+  font-family: sans-serif;
+  font-weight: 900;
+  opacity:0.8;
+
+}
+
+.cardOriginalPrice{
+  font-size: 16px;
+  color:#000;
+  opacity: 0.3;
+  font-weight: 900;
+  text-decoration: line-through;
+}
+.cardFinalPrice{
+  font-size: 24px;
+  font-weight: 900;
+  margin-left: 10px;
+}
+
+.cardContent{
+  font-size: 16px;
+  font-weight: 500;
+  opacity: 0.4;
+  width: 60%;
+  padding: 10px;
+  margin-right: auto;
+}

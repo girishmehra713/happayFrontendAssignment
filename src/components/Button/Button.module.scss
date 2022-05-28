@@ -1,0 +1,86 @@
+@import '../../Styles/_variables.scss';
+
+
+.btn{
+  outline: none;
+  border: none;
+
+  display: block;
+  width: 100%;
+  padding: 16px 16px;
+  background-color: $primary;
+  border-radius: 4px;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &.btnOutline{
+    background-color: white;
+    color: $primary;
+    border: 1px solid $primary;
+    &:focus {
+      border: 1px solid $primary;
+    }
+  }
+
+  &:focus{
+    outline: none;
+    border: none;
+  }
+  &:hover{
+    box-shadow: 0px 2px 8px #0000004f;
+    background-color: $blue-700;
+    color: white;
+  }
+}
+
+.addToCartWrapper{
+  border: 1px solid #494949;
+  border-radius: 4px;
+  .btns {
+    outline: none;
+    border: none;
+    padding: 16px 24px;
+    background-color: #494949;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.9;
+    }
+
+    &.left {
+      border-radius: 4px 0 0 4px;
+    }
+    
+    &.right {
+      border-radius: 0px 4px 4px 0px;
+    }
+
+
+  }
+
+  .qtyCont {
+    flex: 1 1 0;
+    padding: 16px 16px;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    color: #494949;
+  }
+
+  &.primary {
+    border: 1px solid $primary;
+    .btns {
+      background-color: $primary;
+    }
+    .qtyCont{
+      color: $primary;
+    }
+  }
+
+}

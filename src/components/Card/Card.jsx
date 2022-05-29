@@ -9,11 +9,14 @@ const Card = (props) => {
       <div className={`${Styles.imgCont}`}>
         <img className={`${Styles.cardImg}`} src={cardImg} alt="orange_card" />
         <div className={`${Styles.imgShadow}`}></div>
+        {!!orgPrice && (
+          <div className={`${Styles.discountTag}`}>{Math.round(((orgPrice - finalPrice) / orgPrice) * 100, 0)}% OFF </div>
+        )}
       </div>
       <div className={`${Styles.cardPriceDetails}`}>
         <span className={`${Styles.cardName}`}>{cardName}</span>
         <div>
-          {orgPrice && (
+          {!!orgPrice && (
             <span className={`${Styles.cardOriginalPrice}`}>${orgPrice}.00</span>
           )}
           <span className={`${Styles.cardFinalPrice}`}>${finalPrice}.00</span>

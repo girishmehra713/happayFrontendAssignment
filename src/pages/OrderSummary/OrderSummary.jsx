@@ -7,6 +7,9 @@ import { Link } from "react-router-dom";
 import AddToCartButton from "../../components/Button/AddToCartBatton";
 import Button from "../../components/Button/Button";
 
+const DELIVERY_FEE = 20;
+const TAXES = 10;
+
 const OrderSumary = () => {
   const cart = useSelector((state) => state.cart);
 
@@ -95,11 +98,11 @@ const OrderSumary = () => {
                 )}
                 <div className={`${Styles.row} d-flex align-item-center`}>
                   <div> Delivery Fee </div>
-                  <div> $12.00 </div>
+                  <div> ${DELIVERY_FEE}.00 </div>
                 </div>
                 <div className={`${Styles.row} d-flex align-item-center`}>
                   <div> Taxes & Fees </div>
-                  <div> $12.00 </div>
+                  <div> ${TAXES}.00 </div>
                 </div>
 
                 <hr color="#e0e6e9" />
@@ -108,7 +111,7 @@ const OrderSumary = () => {
                   className={`${Styles.row} ${Styles.textBold} d-flex align-item-center`}
                 >
                   <div> To Pay </div>
-                  <div> ${totalVal + 12 + 12 - savings}.00 </div>
+                  <div> ${totalVal + DELIVERY_FEE + TAXES - savings}.00 </div>
                 </div>
 
                 <Button

@@ -14,9 +14,9 @@ const Card = (props) => {
         <span className={`${Styles.cardName}`}>{cardName}</span>
         <div>
           {orgPrice && (
-            <span className={`${Styles.cardOriginalPrice}`}>${orgPrice}</span>
+            <span className={`${Styles.cardOriginalPrice}`}>${orgPrice}.00</span>
           )}
-          <span className={`${Styles.cardFinalPrice}`}>${finalPrice}</span>
+          <span className={`${Styles.cardFinalPrice}`}>${finalPrice}.00</span>
         </div>
       </div>
       <p className={`${Styles.cardContent}`}>{description}</p>

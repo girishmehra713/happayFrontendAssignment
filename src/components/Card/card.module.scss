@@ -1,5 +1,5 @@
 .card{
-  width: 400px;
+  width: 350px;
   display: flex;
   flex-direction: column;
   padding: 20px 0px;
@@ -22,6 +22,7 @@
   font-family: sans-serif;
   font-weight: 900;
   opacity:0.8;
+  text-transform: capitalize;
 
 }
 
@@ -42,7 +43,32 @@
   font-size: 16px;
   font-weight: 500;
   opacity: 0.4;
-  width: 60%;
+  width: 70%;
   padding: 10px;
   margin-right: auto;
+}
+.addCartBtn{
+  width: 95%;
+  margin: auto;
+}
+
+.card:hover .imgShadow{
+  transform: scale(0.94) translateX(-50%);
+}
+
+.imgCont{
+  position: relative;
+  .imgShadow{
+    position: absolute;
+    width: 85%;
+    height: 100%;
+    top: 13px;
+    left: 50%;
+    transition: 0.3s;
+    transform: translateX(-50%) scale(1);
+    filter: blur(10px);
+    border-radius: 16px;
+    z-index: -1;
+    background-color: rgba(0, 0, 0, 0.315);
+  }
 }

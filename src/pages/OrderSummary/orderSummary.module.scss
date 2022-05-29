@@ -1,0 +1,114 @@
+@import '../../Styles/_variables.scss';
+
+.orderSummarySection{
+  width: 100%;
+  max-width: 1280px;
+  padding: 48px 24px;
+  margin-left: auto;
+  margin-right: auto;
+  .backCont {
+    color: #777d8c;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    &.add {
+      color: $primary;
+      padding: 16px 0px;
+    }
+    .backToHome{
+      margin-left: 12px;
+    }
+  }
+
+  .orderSummaryCount {
+    color: #3d434f;
+    margin-top: 36px;
+    margin-bottom: 24px;
+  }
+}
+
+.orderItemsSection{
+  display: flex;
+
+  .orderItemsCont{
+    width: 60%;
+    padding-right: 16px;
+    .orderItems{
+      padding: 18px 24px;
+      border: 1px solid #ecf0f1;
+      border-radius: 4px;
+    }
+  }
+  .priceDetailsCont{
+    width: 40%;
+    padding-left: 16px;
+  }
+  
+  @media screen  and (max-width: 520px) {
+    flex-wrap: wrap;
+    .orderItemsCont{
+      width: 100%;
+      margin-bottom: 24px;
+      padding-right: 0px;
+    }
+    .priceDetailsCont{
+      padding-left: 0px;
+      width: 100%;
+    }
+  }
+}
+
+.orderItems{
+  text-transform: capitalize;
+  .tableHeader{
+    .col{
+      padding: 24px;
+      border-bottom: 1px solid  #ecf0f1;
+      color: #8b8f95;
+      font-weight: bold;
+      font-size: 18px;
+    }
+  }
+  .row{
+    .col{
+      padding: 16px;
+    }
+  }
+  .sno{
+    width: 120px;
+  }
+  .item{
+    flex: 1 1 0;
+  }
+  .qty{
+    width: 260px;
+  }
+}
+
+.priceDetails{
+  background-color: #edf2f5;
+  border-radius: 4px;
+  padding: 18px 24px;
+  h3 {
+    padding: 16px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #44484e;
+  }
+  hr {
+    margin: 18px 0px;
+  }
+  .row {
+    padding: 24px;
+    justify-content: space-between;
+    color: #4d535e;
+    font-size: 18px;
+  }
+}
+
+.textSuccess{
+  color: #46bb99;
+}
+.textBold{
+  font-weight: bold;
+}

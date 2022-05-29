@@ -8,6 +8,9 @@
   justify-content: space-between;
   box-shadow: 8px 0px 10px rgba(0, 0, 0, 0.308);
   z-index: 1050;
+  &.noShadow {
+    box-shadow: none;
+  }
   a{
     text-decoration: none;
   }

@@ -1,23 +1,36 @@
 import React from "react";
 import Styles from "./card.module.scss";
-const Card = () => {
+
+import AddToCartButton from "../Button/AddToCartBatton";
+const Card = (props) => {
+  const { cardImg, cardName, orgPrice, finalPrice, description } = props;
   return (
     <div className={`${Styles.card}`}>
-      <img
-        className={`${Styles.cardImg}`}
-        src="https://react-coding-assignment.s3.ap-south-1.amazonaws.com/cards/orange_card.png"
-        alt="orange_card"
-      />
+      <div className={`${Styles.imgCont}`}>
+        <img className={`${Styles.cardImg}`} src={cardImg} alt="orange_card" />
+        <div className={`${Styles.imgShadow}`}></div>
+      </div>
       <div className={`${Styles.cardPriceDetails}`}>
-        <span className={`${Styles.cardName}`}>Food Card</span>
+        <span className={`${Styles.cardName}`}>{cardName}</span>
         <div>
-          <span className={`${Styles.cardOriginalPrice}`}>$30.00</span>
-          <span className={`${Styles.cardFinalPrice}`}>$21.00</span>
+          {orgPrice && (
+            <span className={`${Styles.cardOriginalPrice}`}>${orgPrice}</span>
+          )}
+          <span className={`${Styles.cardFinalPrice}`}>${finalPrice}</span>
         </div>
       </div>
-      <p className={`${Styles.cardContent}`}>
-        This card is used for spending on Food merchants.
-      </p>
+      <p className={`${Styles.cardContent}`}>{description}</p>
+      <div className={`${Styles.addCartBtn}`}>
+        <AddToCartButton
+          variant="primary"
+          item={{
+            id: props.id,
+            name: cardName,
+            price: props.finalPrice,
+            discount: (orgPrice || finalPrice) - finalPrice
+          }}
+        />
+      </div>
     </div>
   );
 };

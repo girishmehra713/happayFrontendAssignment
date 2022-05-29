@@ -1,7 +1,7 @@
 import "./styles.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home/Home";
-import OrderSumary from "./pages/OrderSummary";
+import OrderSumary from "./pages/OrderSummary/OrderSummary";
 
 export default function App() {
   return (

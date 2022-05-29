@@ -1,14 +1,39 @@
-import React, { useState } from "react";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  addItemToCart,
+  removeFromCart,
+  updateQty
+} from "../../redux/action/cartActions";
 import Button from "./Button";
 import Styles from "./Button.module.scss";
 
-const AddToCartButton = ({ variant }) => {
-  const [qty, setQty] = useState(0);
+const AddToCartButton = ({ item = {}, variant }) => {
+  const dispatch = useDispatch();
+  const cart = useSelector((state) => state.cart);
+
+  const qty = cart[item.id] ? cart[item.id].qty : 0;
+
+  function handleIncrement() {
+    dispatch(updateQty(item.id, 1));
+  }
+
+  function handleDecrement() {
+    if (qty === 1) {
+      dispatch(removeFromCart(item.id));
+    } else {
+      dispatch(updateQty(item.id, -1));
+    }
+  }
+
+  function handleAdd() {
+    dispatch(addItemToCart(item));
+  }
 
   return (
     <>
       {!qty ? (
-        <Button variant="outline" onClick={() => setQty(qty + 1)}>
+        <Button variant="outline" onClick={handleAdd}>
           Add to Cart
         </Button>
       ) : (
@@ -19,14 +44,14 @@ const AddToCartButton = ({ variant }) => {
         >
           <button
             className={`${Styles.btns} ${Styles.left}`}
-            onClick={() => setQty((prev) => prev - 1)}
+            onClick={handleDecrement}
           >
             -
           </button>
           <div className={`${Styles.qtyCont}`}> {qty} </div>
           <button
             className={`${Styles.btns} ${Styles.right}`}
-            onClick={() => setQty((prev) => prev + 1)}
+            onClick={handleIncrement}
           >
             +
           </button>
